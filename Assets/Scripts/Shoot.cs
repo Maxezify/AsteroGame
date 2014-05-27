@@ -8,7 +8,11 @@ public class Shoot : MonoBehaviour {
 
 	void Update () {
 
+		// La balle bouge ici
+
 		transform.Translate(Vector3.down * ProjectileSpeed * Time.deltaTime);
+
+		// Elle disparait en dehors de l'écran ici
 
 		if (transform.position.y > 8 || transform.position.y < -8 )   {
 
@@ -23,6 +27,8 @@ public class Shoot : MonoBehaviour {
 		}
 
 	}
+
+	// La collision entre les ennemis la détruit.
 
 	void OnTriggerEnter ( Collider other )  {
 		

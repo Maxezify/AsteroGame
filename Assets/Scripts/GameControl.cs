@@ -17,7 +17,11 @@ public class GameControl : MonoBehaviour {
 
 		Time.timeScale = 0f;
 
+		// Le jeu est freeze sur l'UI.
+
 		if (Input.GetKeyDown(KeyCode.JoystickButton0)) {
+
+		//En appuyant sur A, l'UI disparait et le jeu ne freeze plus
 
 			DestroyObject(gameObject);
 

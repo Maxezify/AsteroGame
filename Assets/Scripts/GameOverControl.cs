@@ -8,6 +8,8 @@ public class GameOverControl : MonoBehaviour {
 	void Update () {
 		
 		if (Input.GetKeyDown(KeyCode.JoystickButton0)) {
+
+			//Gestion Game Over, la scène suivante est loadée en appuyant sur A.
 			
 			Application.LoadLevel("Menu");
 			

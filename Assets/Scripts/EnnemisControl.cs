@@ -17,6 +17,8 @@ public class EnnemisControl : MonoBehaviour {
 	// Update is called once per frame
 	void Start()  {
 
+		//Player et ScoreText amenés ici
+
 		Player = GameObject.FindGameObjectWithTag("Player").GetComponent<playerControl>();
 
 		ScoreText = GameObject.FindGameObjectWithTag("ScoreLab").GetComponent<ScoreAstero>();
@@ -26,12 +28,17 @@ public class EnnemisControl : MonoBehaviour {
 
 	void Update () {
 
+		// Rotation naturelle des astéroides
+
 		transform.Rotate(Vector3.right * RotateEnnemis *  Time.deltaTime);
 
+		// Vitesse de l'astéroide calculé
 
 		float EnnemisbougeFirstVague = EnnemisSpeed * Time.deltaTime;
 
 		if ( life == 0f)  {
+
+		// L'astéroide est détruit et le score se met à jour + 10 points.
 
 			DestroyObject(gameObject);
 
@@ -39,12 +46,15 @@ public class EnnemisControl : MonoBehaviour {
 
 		}
 
+		// L'astéroide suit le vaisseau
 
 		transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, EnnemisbougeFirstVague);
 
 	}
 	
 	void OnTriggerEnter ( Collider other )  {
+
+		// La collision de la balle fait perdre de la vie à l'astéroide. Le score se met à jour + 30 points.
 		
 		if (other.tag == "Balle")  {
 			
@@ -53,13 +63,6 @@ public class EnnemisControl : MonoBehaviour {
 			life--;
 
 			ScoreText.Score += ScoreTouch;
-
-		}
-
-		if (other.tag == "Ennemis")  {
-
-
-
 
 		}
 

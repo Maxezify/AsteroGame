@@ -16,6 +16,8 @@ public class ScoreAstero : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		//le GUI ScoreText possède désormais un texte comportant le score.
+
 		ScoreText.text = Score.ToString();
 	
 	}

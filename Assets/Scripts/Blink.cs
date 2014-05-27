@@ -1,17 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/// <summary>
-/// This script adds a blink effect on a GUIText. Plays with color alpha
-/// making the text continually appear and disappear.
-/// </summary>
+
 public class Blink : MonoBehaviour
 {
-	/// <summary>
-	/// The blink duration from visible state to invisble state.
-	/// </summary>
+
 	public float TextBlinkTime;
-	
 	private Color _textColorON;
 	private Color _textColorOFF;
 	private bool _fadingIn;

@@ -13,6 +13,8 @@ public class playerControl : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		// Les différents mouvement du vaisseau(Player), position et Rotation.
 		
 		float MoveHori = Input.GetAxisRaw("Horizontal") * PlayerSpeed * Time.deltaTime;
 		transform.Translate(Vector3.right * MoveHori, Space.World);
@@ -22,7 +24,9 @@ public class playerControl : MonoBehaviour {
 		
 		float MoveRotateLeft = Input.GetAxisRaw("Rotate") * RotationSpeed * Time.deltaTime;
 		transform.Rotate ( Vector3.forward * MoveRotateLeft);
-		
+
+
+		//La balle est instancié ici en appyant sur la gachette RB.
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton5)) {
 
@@ -30,6 +34,8 @@ public class playerControl : MonoBehaviour {
 
 			Instantiate(PrefabBalle, posis, transform.rotation);
 
+
+		//La balle est instancié ici en appyant sur la touche Espace.
 
 		}
 
@@ -46,9 +52,11 @@ public class playerControl : MonoBehaviour {
 
 			Application.LoadLevel("GameOver");
 
-			// ICI LE GAMEOVER
+		// Si le player a plus de vie, la scène Game Over est mise.
 
 		}
+
+		// Collision au bord de l'écran sur le Player.
 
 		if (transform.position.x <= -4.85f) {
 
@@ -76,6 +84,8 @@ public class playerControl : MonoBehaviour {
 	}
 
 	void OnTriggerEnter ( Collider other )  {
+
+		//Collision entre le vaisseau et l'ennemi, le player a plus de vie du coup.
 		
 		if (other.tag == "Ennemis")  {
 			

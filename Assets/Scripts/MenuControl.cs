@@ -8,6 +8,8 @@ public class MenuControl : MonoBehaviour {
 	void Update () {
 		
 		if (Input.GetKeyDown(KeyCode.JoystickButton0)) {
+
+			//Gestion Menus, la scène suivante est loadée en appuyant sur la touche A.
 			
 			Application.LoadLevel("Game");
 

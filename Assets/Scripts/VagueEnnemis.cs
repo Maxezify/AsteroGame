@@ -7,9 +7,13 @@ public class VagueEnnemis : MonoBehaviour {
 
 	void Start() {
 
+		//Utilisation de la coroutine pour la vague.
+
 		StartCoroutine(SpawnEnnemies());
 
 	}
+
+	// Les ennemis s'instencie tous les 5 secondes sur différents GameObjects.
 
 	IEnumerator SpawnEnnemies() {
 
